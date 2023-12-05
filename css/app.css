@@ -14,7 +14,7 @@ h1, h2, h3, h4 {
   font-family: Muli, serif;
 }
 
-p.logo {
+p#logo {
   padding: 15px 0px;
  
   color: white;
