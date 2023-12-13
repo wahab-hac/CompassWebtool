@@ -14,12 +14,12 @@ h1, h2, h3, h4 {
   font-family: Muli, serif;
 }
 
-p#logo {
+p.logo {
   padding: 15px 0px;
  
   color: white;
   padding-left: 1.7rem;
-  background: transparent url(../images/logo.png) 0% 50% no-repeat;
+  
   background-size: 1.2rem;
 }
 
@@ -117,60 +117,7 @@ header {
 
 
 
-.btn {
-  
-  color: white;
-  cursor: pointer;
-  text-align: center;
 
-  height: 4rem;
-  padding: 0px 5px;
-
-  background-color: transparent;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: auto 50%;
-
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-}
-
-  .btn svg * {
-    transition: fill 0.5s ease-out 0s;
-  }
-
-.btn--hide {
-  display: none;
-}
-
-.btn--hide.show {
-  display: inline-block;
-}
-
-  .btn:active {
-    background-color: rgba(241, 241, 241, 0.5);
-  }
-
-  .btn__icon {
-    height: 50%;
-    width: 100%;
-  }
-
-  .btn__icon--active {
-    display: none;
-  }
-
-  .btn__icon--inactive {
-    display: block;
-  }
-
-.btn.active .btn__icon--active {
-    display: block;
-  }
-
-.btn.active .btn__icon--inactive {
-    display: none;
-  }
 
 
 
@@ -194,81 +141,4 @@ header {
  
 
 
-
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.popup.popup--show {
-  display: block;
-}
-
-  .popup__content {
-    max-width: 300px;
-    margin: 0 auto;
-
-
-    background-color: white;
-    color: black;
-  }
-
-    .popup__contents {
-      padding: 1rem;
-    }
-
-      .popup__inner {
-
-      }
-
-        .popup__inner--hide {
-          display: none;
-        }
-
-    .popup__close {
-      display: block;
-      padding: 1rem;
-      text-align: right;
-      width: 100%;
-      border: 0;
-      background: transparent;
-      outline: none;
-    }
-
-      .popup__close:hover {
-        text-decoration: underline;
-        cursor: pointer;
-      }
-
-
-
-html.nightmode {
-  background: black;
-  color: white;
-}
-
-  /* html.nightmode .container {
-    transform: translateY(-2rem);
-    -webkit-transform: translateY(-2rem);
-  } */
-
-  /* html.nightmode header {
-    transform: translateY(-4rem);
-    -webkit-transform: translateY(-4rem);
-  } */
-
-  html.nightmode .label {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  html.nightmode .btn svg * {
-    fill: rgba(255, 255, 255, 0.8);
-  }
 
