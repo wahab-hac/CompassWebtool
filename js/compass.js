@@ -1,6 +1,5 @@
 (function () {
   "use strict";
-  
 
   //set to true for debugging output
   var debug = false;
@@ -28,7 +27,18 @@
   var debugOrientationDefault = document.getElementById("debug-orientation-default");
 
 
+  // info popup elements, pus buttons that open popups
+  var popup = document.getElementById("popup");
+  var popupContents = document.getElementById("popup-contents");
+  var popupInners = document.querySelectorAll(".popup__inner");
+  var btnsPopup = document.querySelectorAll(".btn-popup");
 
+
+  // buttons at the bottom of the screen
+  var btnLockOrientation = document.getElementById("btn-lock-orientation");
+  var btnNightmode = document.getElementById("btn-nightmode");
+  var btnMap = document.getElementById("btn-map");
+  var btnInfo = document.getElementById("btn-info");
 
 
   // if we have shown the heading unavailable warning yet
@@ -303,13 +313,55 @@
     console.log("location fail: ", error);
   }
 
- 
+  function setNightmode(on) {
+
+    if (on) {
+      btnNightmode.classList.add("active");
+    } else {
+      btnNightmode.classList.remove("active");
+    }
+
+    window.setTimeout(function() {
+      if (on) {
+        document.documentElement.classList.add("nightmode");
+      } else {
+        document.documentElement.classList.remove("nightmode");
+      }
+    }, 1);
 
 
+    isNightMode = on;
+  }
 
- 
+  function toggleNightmode() {
+    setNightmode(!isNightMode);
+  }
 
-  
+  function openMap() {
+    window.open("https://www.google.com/maps/place/@" + positionCurrent.lat + "," + positionCurrent.lng + ",16z", "_blank");
+  }
+
+  function popupOpenFromClick(event) {
+    popupOpen(event.currentTarget.dataset.name);
+  }
+
+  function popupOpen(name) {
+    var i;
+    for (i=0; i<popupInners.length; i++) {
+      popupInners[i].classList.add("popup__inner--hide");
+    }
+    document.getElementById("popup-inner-" + name).classList.remove("popup__inner--hide");
+
+    popup.classList.add("popup--show");
+  }
+
+  function popupClose() {
+    popup.classList.remove("popup--show");
+  }
+
+  function popupContentsClick(event) {
+    event.stopPropagation();
+  }
 
   function decimalToSexagesimal(decimal, type) {
     var degrees = decimal | 0;
@@ -366,33 +418,7 @@
     timeout: 27000
   });
 
-  
+  setNightmode(false);
   checkLockable();
 
 }());
-function openNewPage(selectElement) {
-  // Get the selected option value
-  var selectedOption = selectElement.value;
-
-  // Check if a valid option is selected
-  if (selectedOption) {
-      // Open the new page based on the selected option
-      window.location.href = selectedOption + ".html"; // Change the extension as needed
-  }
-}
-function showDialog() {
-  let dialog = document.getElementById('dialog');
-  dialog.classList.remove('hidden');
-  setTimeout(() => {
-    dialog.classList.remove('opacity-0');
-  }, 20);
-}
-
-function hideDialog() {
-  let dialog = document.getElementById('dialog');
-  dialog.classList.add('opacity-0');
-  setTimeout(() => {
-    dialog.classList.add('hidden');
-  }, 500);
-}
-
