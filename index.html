@@ -177,14 +177,14 @@
         }
 
         function getDirectionLabel(angle) {
-            if (angle >= 22.5 && angle < 67.5) return "NW";
-            if (angle >= 67.5 && angle < 112.5) return "W";
-            if (angle >= 112.5 && angle < 157.5) return "SW";
-            if (angle >= 157.5 && angle < 202.5) return "S";
-            if (angle >= 202.5 && angle < 247.5) return "SE";
-            if (angle >= 247.5 && angle < 292.5) return "E";
-            if (angle >= 292.5 && angle < 337.5) return "NE";
-            return "N";
+            if (angle >= 22.5 && angle < 67.5) return "North West ";
+            if (angle >= 67.5 && angle < 112.5) return "West";
+            if (angle >= 112.5 && angle < 157.5) return "South West";
+            if (angle >= 157.5 && angle < 202.5) return "South";
+            if (angle >= 202.5 && angle < 247.5) return "South East";
+            if (angle >= 247.5 && angle < 292.5) return "Eest";
+            if (angle >= 292.5 && angle < 337.5) return "North East";
+            return "North";
         }
 
         if (isAppleDevice()) {
@@ -193,7 +193,7 @@
             window.addEventListener("deviceorientationabsolute", handleOrientationEvent, true);
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        // document.addEventListener("DOMContentLoaded", function() {
 
             function supportsOrientation() {
                 return 'ondeviceorientation' in window || 'ondeviceorientationabsolute' in window;
@@ -213,14 +213,7 @@
                 showNotSupportedMessage();
             }
 
-            if (localStorage.getItem('locationEnabled') === 'true') {
-                locationSwitch.checked = true;
-            } else {
-                locationSwitch.checked = false;
-            }
-
-            locationSwitch.addEventListener("change", function() {
-                if (this.checked && "geolocation" in navigator) {
+           
                     navigator.geolocation.getCurrentPosition(function(position) {
                         const latitude = position.coords.latitude;
                         const longitude = position.coords.longitude;
@@ -229,45 +222,12 @@
                             `https://www.google.com/maps/?q=${latitude},${longitude}`;
                         locationElem.classList.remove('d-none');
                     });
-                    localStorage.setItem('locationEnabled', 'true');
-                } else {
-                    coordsElem.textContent = '';
-                    shareLinkElem.href = '#';
-                    locationElem.classList.add('d-none');
-                    localStorage.setItem('locationEnabled', 'false');
-                }
-            });
+                    
+                
+          
 
-            function copyLocationLink() {
-                var textArea = document.createElement("textarea");
-                textArea.value = document.getElementById("chromeLink").textContent;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand("Copy");
-                textArea.remove();
-            }
-
-            document.getElementById("copyButton").addEventListener("click", copyLocationLink);
-
-            var html = document.querySelector('html');
-            var initialTheme = html.getAttribute('data-bs-theme');
-            compass.src = initialTheme === 'dark' ? 'https://onlinedigitalcompass.com/images/compass-light.png' : 'https://onlinedigitalcompass.com/images/compass-dark.png';
-
-            var observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.attributeName === 'data-bs-theme') {
-                        var newTheme = html.getAttribute('data-bs-theme');
-                        compass.src = newTheme === 'dark' ? 'https://onlinedigitalcompass.com/images/compass-light.png' :
-                            'https://onlinedigitalcompass.com/images/compass-dark.png';
-                    }
-                });
-            });
-
-            var config = {
-                attributes: true,
-                attributeFilter: ['data-bs-theme']
-            };
-            observer.observe(html, config);
+            
+        // });
         });
     </script>
     
