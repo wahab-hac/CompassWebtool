@@ -1,6 +1,7 @@
 const compass = document.getElementById('compass');
         const msg = document.getElementById('msg');
-        const directionDisplay = document.getElementById('angle');
+        const angledeg = document.getElementById('angle-deg');
+        const angledir = document.getElementById('angle-dir');
         const locationElem = document.getElementById('location');
         const coordsElem = document.getElementById('coords');
         const shareLinkElem = document.getElementById('share-link');
@@ -29,7 +30,8 @@ const compass = document.getElementById('compass');
         }
 
         function setCompassDirection(angle) {
-            directionDisplay.innerHTML = getDirectionLabel(angle) + "  " + Math.round((360 - angle) * 10) / 10 + "&deg;";
+            angledeg.innerHTML =  Math.round((360 - angle) * 10) / 10 + "&deg;" ;
+            angledir.innerHTML =  getDirectionLabel(angle) ;
             compass.style.transform = "rotate(" + angle + "deg)";
         }
 
