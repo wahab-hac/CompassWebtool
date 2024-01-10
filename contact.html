@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en"> <!-- manifest="manifest.appcache"> -->
 
-
-
 <head>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#000000">
 
-
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" sizes="192x192" href="images/logo-app.png">
-  <link rel="apple-touch-icon" href="images/logo-app.png">
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="input.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="js/compass.js"></script>
+  <link rel="icon" sizes="192x192" href="/images/logo-app.webp">
+  <link rel="apple-touch-icon" href="/images/logo-app.webp">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/input.css">
 
 
   <meta property="og:title" content="Contact | Online Compass Live">
@@ -47,7 +41,7 @@
         <a href="/">
           <div class="flex my-3">
             <div>
-              <img class="h-6 my-0.5 mx-2" src="/images/logo.png" alt="Online Compass Live">
+              <img class="h-6 my-0.5 mx-2" height="24px" width="24px" src="/images/logo.webp" alt="Online Compass Live">
             </div>
             <div>
               <p class=" font-semibold text-xl">Online Compass | Live</p>
@@ -59,20 +53,25 @@
 
       </div>
       <div class="flex ">
+        <div class=" hidden lg:flex">
 
+          <a class=" px-3 py-4 font-semibold " href="/">Home</a>
+          <a class=" px-3 py-4 font-semibold" href="/blog/">Blog</a>
+          <a class=" px-3 py-4 font-semibold" href="/#about">About</a>
+          <a class=" px-3 py-4 font-semibold text-blue-300" href="/contact.html">Contact</a>
+          <a class=" px-3 py-4 font-semibold" href="/privacy-policy.html">Privacy</a>
+          <a class=" px-3 py-4 font-semibold" href="/terms.html">Terms</a>
+        </div>
 
+        <button class="px-4 py-2 rounded" onclick="showDialog()">
+          <img src="/images/language.webp" alt="Language">
+        </button>
 
-
-        <!-- Trigger Button -->
-        <button class="px-4 py-2 rounded" onclick="showDialog()"><i class="fa fa-language text-gray-200"
-            style="font-size:24px"></i>></i></button>
-
-        <!-- Modal Overlay and Content -->
         <div id="dialog"
           class="fixed z-50 left-0 top-0 bg-black bg-opacity-70 opacity-95 hidden w-screen h-screen transition-opacity duration-500"
           onclick="hideDialog()">
           <div
-            class="bg-[#0F0F0F] text-gray-200 border border-gray-200 rounded shadow-md  mx-auto my-20 w-[80%] lg:w-1/4">
+            class="bg-[#0F0F0F] text-gray-200 border border-gray-200 rounded shadow-md  mx-auto my-20 w-[80%] lg:w-1/3">
             <div class="flex justify-end gap-4 ">
               <button
                 class="m-2 bg-gray-100 border border-gray-300 px-3 py-1 rounded text-[#0F0F0F] hover:bg-gray-200 font-bold"
@@ -82,32 +81,59 @@
             <div class="px-8 pb-4">
 
 
-              <div class="lg:flex items-center gap-5">
+              <div class=" items-center gap-5">
 
                 <div>
                   <p class="font-bold text-lg mb-2 ">Select Language</p>
                   <div>
                     <ul>
-                      <li class="my-1"><a class="hover:text-blue-300" href="/">English</a></li>
-                      <li class="my-1"><a class="hover:text-blue-300" href="hi.html">हिंदी</a></li>
-                      <li class="my-1"><a class="hover:text-blue-300" href="ir.html">فارسی</a></li>
+                      <div class="LangDIV flex justify-evenly">
+                        <div class="LangDIV1">
+                          <li class="my-1"><a class="text-blue-300" href="/">English</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/da/">Dansk</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/fr/">Français</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/it/">Italiano</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/es/">Español</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/pl/">Polski</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/ir/">فارسی</a></li>
 
+
+                        </div>
+                        <div class="LangDIV2">
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/ms/">Bahasa Malaysia</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/nl/">Netherlands</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/pt/">Português</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/sv/">Svenska</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/de/">Deutsch</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/hi/">हिन्दी</a></li>
+                        </div>
+                        <div class="LangDIV2">
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/id/">Bahasa Indonesia</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/uk/">Українська</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/vi/">Tiếng Việt</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/ru/">Русский</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/tr/">Türkçe</a></li>
+                          <li class="my-1"></li><a class="hover:text-blue-300" href="/ar/">العربية</a></li>
+
+                        </div>
+                      </div>
                     </ul>
+
                   </div>
+
                 </div>
               </div>
             </div>
-
           </div>
+
         </div>
-
-
-
-
-
-
-
       </div>
+
+
+
+
+
+    </div>
 
 
 
@@ -117,7 +143,7 @@
   </header>
   <main class=" md:w-[70%] md:mx-auto">
 
-    <div class="px-3 text-center">
+    <div class="px-3 ">
 
       <p>
         At onlinecompass.live, we value your inquiries, feedback, and any opportunity to assist you. Whether you
@@ -132,8 +158,44 @@
       </h1>
       <div class="">
         <p>Name: Abdul Wahab</p>
-        <p>Insta: <a class="text-blue-500" target="_blank" href="https://instagram.com/wahab_hac">wahab_hac</a></p>
+       
         <p>email: cabin.wahab@gmail.com</p>
+
+      </div>
+      <div class="8thDIV  lg:px-10 pb-4">
+        <h2 class=" font-bold text-lg text-center pt-5 " id="Contact">Leave Your Message</h2>
+
+        
+        <div class="mt-3">
+          <form method="POST" name="contact"><input type="hidden" name="form-name" value="contact">
+            <p class="mb-9">
+              <label class="" for="MESSAGE"></label>
+
+              <textarea
+                class="w-[80%] mx-[10%] py-4  rounded-md border-[1px]   focus:outline-gray-300 focus:ring focus:ring-gray-300 bg-black   "
+                type="text" name="MESSAGE" placeholder="  MESSAGE" cols="30" rows="10"></textarea>
+            </p>
+            <p class="mb-9">
+              <label class="my-14" for="Name"></label>
+              <input class="w-[80%] mx-[10%] py-3  rounded-md border-[1px]    focus:outline-gray-300 bg-black  "
+                type="text" id="Name" name="Name" placeholder="  Name">
+            </p>
+
+            <p class="mb-9">
+              <label class="" for="E-MAIL"></label>
+              <input class="w-[80%] mx-[10%] py-3  rounded-md border-[1px]     focus:outlinegray-300 bg-black  "
+                type="email" id="E-MAIL" name="E-MAIL" placeholder="  E-MAIL">
+            </p>
+
+
+            <div class="flex justify-center">
+              <button type="submit" class="py-3  px-[10%] my-8 font-semibold text-white bg-blue-600 rounded-md">Submit
+                Now</button>
+            </div>
+          </form>
+        </div>
+
+
 
       </div>
 
@@ -150,6 +212,8 @@
           <ul class="tracking-wider">
             <p class=" font-bold text-lg">Quick Links</p>
             <li class="my-4"><a class=" hover:underline hover:text-white p-1 m-1 " href="/">Home</a>
+            </li>
+            <li class="my-4"><a class=" hover:underline hover:text-white p-1 m-1 " href="/blog/">Blog</a>
             </li>
             <li class="my-4"><a class=" hover:underline hover:text-white p-1 m-1 " href="/contact.html">Contact</a>
             </li>
@@ -169,8 +233,10 @@
 
           <div class="m-4 lg:m-8 flex justify-center">
             <div class=" mx-4">
+              <a></a>
 
-              <a aria-label="Find us on Facebook" target="_blank" rel="noopener">
+              <a href="https://web.facebook.com/online.compass.live" aria-label="Find us on Facebook" target="_blank"
+                rel="noopener">
                 <svg class="h-10 w-10 text-white hover hover:text-gray-200" viewBox="0 0 48 48" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -182,8 +248,9 @@
             </div>
             <div class="mx-4">
 
-              <a aria-label="Find us on Instagram" target="_blank" rel="noopener">
-                <svg class="h-10 w-10 text-white hover:text-emerald-100" viewBox="0 0 48 48" fill="none"
+              <a href="https://instagram.com/wahab_hac" aria-label="Find us on Instagram" target="_blank"
+                rel="noopener">
+                <svg class="h-10 w-10 text-white hover:text-gray-200" viewBox="0 0 48 48" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M24 4.32c6.41 0 7.17.03 9.7.14 2.34.1 3.6.5 4.45.83 1.11.43 1.92.95 2.75 1.79a7.38 7.38 0 0 1 1.8 2.75c.32.85.72 2.12.82 4.46.11 2.53.14 3.29.14 9.7 0 6.4-.03 7.16-.14 9.68-.1 2.35-.5 3.61-.83 4.46a7.42 7.42 0 0 1-1.79 2.75 7.38 7.38 0 0 1-2.75 1.8c-.85.32-2.12.72-4.46.82-2.53.11-3.29.14-9.69.14-6.41 0-7.17-.03-9.7-.14-2.34-.1-3.6-.5-4.45-.83a7.42 7.42 0 0 1-2.75-1.79 7.38 7.38 0 0 1-1.8-2.75 13.2 13.2 0 0 1-.82-4.46c-.11-2.53-.14-3.29-.14-9.69 0-6.41.03-7.17.14-9.7.1-2.34.5-3.6.83-4.45A7.42 7.42 0 0 1 7.1 7.08a7.38 7.38 0 0 1 2.75-1.8 13.2 13.2 0 0 1 4.46-.82c2.52-.11 3.28-.14 9.69-.14ZM24 0c-6.52 0-7.33.03-9.9.14-2.54.11-4.3.53-5.81 1.12a11.71 11.71 0 0 0-4.26 2.77 11.76 11.76 0 0 0-2.77 4.25C.66 9.8.26 11.55.14 14.1A176.6 176.6 0 0 0 0 24c0 6.52.03 7.33.14 9.9.11 2.54.53 4.3 1.12 5.81a11.71 11.71 0 0 0 2.77 4.26 11.73 11.73 0 0 0 4.25 2.76c1.53.6 3.27 1 5.82 1.12 2.56.11 3.38.14 9.9.14 6.5 0 7.32-.03 9.88-.14 2.55-.11 4.3-.52 5.82-1.12 1.58-.6 2.92-1.43 4.25-2.76a11.73 11.73 0 0 0 2.77-4.25c.59-1.53 1-3.27 1.11-5.82.11-2.56.14-3.38.14-9.9 0-6.5-.03-7.32-.14-9.88-.11-2.55-.52-4.3-1.11-5.82-.6-1.6-1.41-2.94-2.75-4.27a11.73 11.73 0 0 0-4.25-2.76C38.2.67 36.45.27 33.9.15 31.33.03 30.52 0 24 0Z"
@@ -203,7 +270,7 @@
         </div>
       </div>
       <ul class="tracking-wider lg:w-[70%] lg:m-auto">
-        <p class=" font-bold text-lg">About OnlineCompass.Live</p>
+        <p id="about" class=" font-bold text-lg">About OnlineCompass.Live</p>
         <li class="my-4">
 
           <p class="text-justify">Welcome to our online compass experience! Discover the cardinal directions with ease
@@ -219,7 +286,7 @@
 
 
 
-      <p class=" py-2 ">Copyright © 2023, All Rights Reserved.</p>
+      <p class=" py-2 ">Copyright © 2024, All Rights Reserved.</p>
       <div class="font-bold text-xl mt-2 ">
 
         <div class="flex justify-center font-light ">
@@ -238,8 +305,8 @@
 
 
       <div>
-        <p>Design and Developed by <a class="text-blue-500" target="_blank"
-            href="https://instagram.com/wahab_hac">wahab_hac</a></p>
+        <p>Design and Developed by <a class="text-blue-300" target="_blank" href="https://instagram.com/wahab_hac">Abdul
+            Wahab</a></p>
 
       </div>
 
@@ -249,6 +316,6 @@
 
 
 </body>
-
+<script src="/js/compass.js"></script>
 
 </html>
