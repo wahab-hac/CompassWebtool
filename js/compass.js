@@ -52,7 +52,7 @@ if (isAppleDevice()) {
     window.addEventListener("deviceorientationabsolute", handleOrientationEvent, true);
 }
 
-window.addEventListener("DOMContentLoaded", function () {
+document.onload.addEventListener("DOMContentLoaded", function () {
 
     function supportsOrientation() {
         return 'ondeviceorientation' in window || 'ondeviceorientationabsolute' in window;
