@@ -52,7 +52,7 @@ if (isAppleDevice()) {
     window.addEventListener("deviceorientationabsolute", handleOrientationEvent, true);
 }
 
-document.onload.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     function supportsOrientation() {
         return 'ondeviceorientation' in window || 'ondeviceorientationabsolute' in window;
@@ -74,9 +74,7 @@ document.onload.addEventListener("DOMContentLoaded", function () {
 
     if (localStorage.getItem('locationEnabled') === 'true') {
         locationSwitch.checked = true;
-    } else {
-        locationSwitch.checked = false;
-    }
+    } 
 
     locationSwitch.addEventListener("change", function () {
         if (this.checked && "geolocation" in navigator) {
