@@ -4,9 +4,9 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "images/logo-app.png",
+      "src": "images/logo-app.webp",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/webp",
       "density": "2"
     }
   ]
