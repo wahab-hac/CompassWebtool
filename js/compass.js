@@ -143,3 +143,13 @@ function hideDialog() {
         dialog.classList.add('hidden');
     }, 500);
 }
+var sideMenu = document.getElementById('side-menu');
+        function openMenu() {
+            sideMenu.classList.remove('right-[-350px]');
+            sideMenu.classList.add('right-0');
+        }
+  
+        function closeMenu() {
+            sideMenu.classList.remove('right-0');
+            sideMenu.classList.add('right-[-350px]');
+        }
