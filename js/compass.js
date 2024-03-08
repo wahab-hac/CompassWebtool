@@ -146,13 +146,13 @@ function hideDialog() {
 }
 var sideMenu = document.getElementById('side-menu');
 function openMenu() {
-    sideMenu.classList.remove('right-[-55%]');
-    sideMenu.classList.add('right-0');
+    sideMenu.classList.remove('hidden');
+    // sideMenu.classList.add('right-0');
 }
 
 function closeMenu() {
-    sideMenu.classList.remove('right-0');
-    sideMenu.classList.add('right-[-55%]');
+    // sideMenu.classList.remove('right-0');
+    sideMenu.classList.add('hidden');
 }
 
 function copyTextToClipboard(text) {
@@ -195,4 +195,3 @@ calibrationdialog.classList.remove('hidden');
             calibrationdialog.classList.add('hidden');
         }, 20);
     }
-
