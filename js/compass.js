@@ -136,20 +136,63 @@ function showDialog() {
     }, 20);
 }
 
+
 function hideDialog() {
     let dialog = document.getElementById('dialog');
     dialog.classList.add('opacity-0');
     setTimeout(() => {
         dialog.classList.add('hidden');
-    }, 500);
+    }, 20);
 }
 var sideMenu = document.getElementById('side-menu');
-        function openMenu() {
-            sideMenu.classList.remove('right-[-350px]');
-            sideMenu.classList.add('right-0');
-        }
-  
-        function closeMenu() {
-            sideMenu.classList.remove('right-0');
-            sideMenu.classList.add('right-[-350px]');
-        }
+function openMenu() {
+    sideMenu.classList.remove('right-[-55%]');
+    sideMenu.classList.add('right-0');
+}
+
+function closeMenu() {
+    sideMenu.classList.remove('right-0');
+    sideMenu.classList.add('right-[-55%]');
+}
+
+function copyTextToClipboard(text) {
+    if (!navigator.clipboard) {
+        fallbackCopyTextToClipboard(text);
+        return;
+    }
+    navigator.clipboard.writeText(text).then(function () {
+        
+        showSuccess();
+
+        // reset to default state
+        setTimeout(() => {
+            resetToDefault();
+        }, 2000);
+   
+    });
+    const $defaultMessage = document.getElementById('copylinkbutton');
+        const $successMessage = document.getElementById('removelinkbutton');
+    const showSuccess = () => {
+        $defaultMessage.classList.add('hidden');
+        $successMessage.classList.remove('hidden');
+    }
+
+    const resetToDefault = () => {
+        $defaultMessage.classList.remove('hidden');
+        $successMessage.classList.add('hidden');
+    }
+    
+}
+let calibrationdialog = document.getElementById('calibrationdialog');
+calibrationdialog.classList.remove('hidden');
+    setTimeout(() => {
+        calibrationdialog.classList.remove('opacity-0');
+    }, 20);
+    function hidecalibrationDialog() {
+        let calibrationdialog = document.getElementById('calibrationdialog');
+        calibrationdialog.classList.add('opacity-0');
+        setTimeout(() => {
+            calibrationdialog.classList.add('hidden');
+        }, 20);
+    }
+
