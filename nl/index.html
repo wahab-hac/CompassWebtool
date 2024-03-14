@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="nl"><!-- manifest="manifest.appcache"> --><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+  
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" sizes="192x192" href="/images/logo-app.webp">
+    <link rel="apple-touch-icon" href="/images/logo-app.webp">
+    <link rel="stylesheet" href="/css/app.css">
+    <!--   <link rel="stylesheet" href="/input.css"> -->
+  
+    <meta property="og:title" content="🧭Online Kompas Live Richting |  Ontvang Oost West Noord Zuid-richtingen">
+    <meta property="og:description" content="We hebben het online kompas naar uw webbrowser gebracht. Nu kunt u eenvoudig door de richting en de qibla navigeren met ons richtingskompasinstrument. Ontdek de richtingen Oost, West, Noord en Zuid.">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="675">
+    <meta property="og:locale" content="en">
+    <meta name="description" content="We hebben het online kompas naar uw webbrowser gebracht. Nu kunt u eenvoudig door de richting en de qibla navigeren met ons richtingskompasinstrument. Ontdek de richtingen Oost, West, Noord en Zuid.">
+  
+  
+  
+    <title>🧭Online Kompas Live Richting | Ontvang Oost West Noord Zuid-richtingen</title>
+    <link rel="canonical" href="https://onlinecompass.live/nl/">
+  
+  
+ </head>
+  
+  <body class="bg-[#0F0F0F] text-gray-200" >
+    <header class="">
+      <div class="flex justify-between">
+        <div>
+          <a href="/">
+            <div class="flex">
+              <div>
+                <img height="50px" width="250px" src="/images/onlinecompass.live.webp" alt="Online Kompas Live">
+              </div>
+              <div>
+  
+              </div>
+            </div>
+  
+  
+          </a>
+  
+        </div>
+  
+        <div>
+          <div id="side-menu" class="hidden fixed top-0 right-0  w-[250px] h-screen z-50 bg-[#0F0F0F] px-5
+                flex flex-col space-y-5 text-white duration-300">
+            <a href="javascript:void(0)" class="text-left text-4xl" onclick="closeMenu()">×</a>
+            <a class="hover:text-blue-300" href="/">Home</a>
+            <a class="hover:text-blue-300" href="/blog/">Blog</a>
+            <a class="hover:text-blue-300" href="#about">About</a>
+            <a class="hover:text-blue-300" href="/contact.html">Contact us</a>
+  
+          </div>
+  
+        </div>
+  
+        <div class="flex ">
+          <div class=" hidden lg:flex">
+  
+            <a class=" px-3 py-4 font-semibold text-blue-300" href="/">Thuis</a>
+            <a class=" px-3 py-4 font-semibold" href="/blog/">Bloggen</a>
+            <a class=" px-3 py-4 font-semibold" href="/#about">Over</a>
+            <a class=" px-3 py-4 font-semibold" href="/contact.html">Contact</a>
+  
+          </div>
+  
+          <button class="px-2 py-2 rounded" onclick="showDialog()">
+            <img src="/images/language.webp" height="25px" width="25px" alt="Taal">
+          </button>
+          <!-- This is used to open the menu -->
+  
+          <span class="lg:hidden cursor-pointer text-3xl px-2 py-2 " onclick="openMenu()">☰</span>
+  
+  
+          <div id="dialog" class="fixed z-50 left-0 top-0 bg-black bg-opacity-70 opacity-95 hidden w-screen h-screen transition-opacity duration-500" onclick="hideDialog()">
+            <div class="bg-[#0F0F0F] text-gray-200 border border-gray-200 rounded shadow-md  mx-auto my-20 w-[80%] lg:w-1/3">
+              <div class="flex justify-end gap-4 ">
+                <button class="m-2 bg-gray-100 border border-gray-300 px-3 py-1 rounded text-[#0F0F0F] hover:bg-gray-200 font-bold" onclick="hideDialog()">X</button>
+  
+              </div>
+              <div class="px-3 pb-4">
+  
+  
+                <div class=" items-center gap-5">
+  
+                  <div>
+                    <p class="font-bold text-lg mb-2 ">Select Language</p>
+                    <div>
+                      <ul>
+                        <div class="LangDIV flex justify-evenly">
+                          <div class="LangDIV1 mx-2">
+                            <li class="my-1 "><a class="hover:text-blue-300" href="/">English</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/da/">Dansk</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300 " href="/fr/">Français</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/it/">Italiano</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/es/">Español</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/pl/">Polski</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/fa/">فارسی</a></li>
+  
+  
+                          </div>
+                          <div class="LangDIV2">
+                            <li class="my-1"><a class="hover:text-blue-300" href="/id/">Bahasa Indonesia</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/uk/">Українська</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/vi/">Tiếng Việt</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/ru/">Русский</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/tr/">Türkçe</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/ar/">العربية</a></li>
+  
+                          </div>
+                          <div class="LangDIV3">
+  
+  
+                            <li class="my-1"><a class="hover:text-blue-300" href="/ms/">Bahasa Malaysia</a></li>
+                            <li class="my-1"><a class="text-blue-300" href="/nl/">Netherlands</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/pt/">Português</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/sv/">Svenska</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/de/">Deutsch</a></li>
+                            <li class="my-1"><a class="hover:text-blue-300" href="/hi/">हिन्दी</a></li>
+  
+                          </div>
+                        </div>
+                      </ul>
+  
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+  
+  
+            </div>
+  
+          </div>
+          <div id="calibrationdialog" class="fixed z-50 left-0 top-0 bg-black bg-opacity-50 opacity-95 w-screen h-screen transition-opacity duration-500 hidden" onclick="hidecalibrationDialog()">
+            <div class="bg-[#0F0F0F] text-gray-200 border border-gray-200 rounded shadow-md  mx-auto my-32 w-[80%] lg:w-1/3">
+              <div class="flex justify-end gap-4 ">
+                <button class="m-2 bg-gray-100 border border-gray-300 px-3 py-1 rounded text-[#0F0F0F] hover:bg-gray-200 font-bold" onclick="hideDialog()">X</button>
+  
+              </div>
+              <div class="px-3 pb-4">
+  
+  
+                <div class=" items-center gap-5">
+  
+                  <div>
+                    <img class="m-auto -mt-24 lg:w-[560px] lg:h-[420px] h-180 w-320 sm:w-fit" src="/images/calibrate-compass-for-better direction.webp" height="500px" width="500px" alt="Calibrate compass for better direction | online compass live">
+                    <p class="font-bold text-base text-center mb-2 ">Move your Mobile in 8 direction for better
+                      Calibration and Accuracy. </p>
+                    <div>
+  
+  
+  
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+  
+  
+            </div>
+  
+          </div>
+        </div>
+  
+  
+  
+  
+  
+      </div>
+  
+  
+  
+      
+  
+  
+    </header>
+  
+    <main class="mx-4 md:w-[70%] md:mx-auto ">
+  
+  
+  
+      <div class="container">
+  
+  
+        <div class="text-center">
+          <div class="-mb-1
+          w-0 h-0 
+          border-2
+          border-white
+          border-l-[18px] 
+          border-t-[27px] 
+          border-r-[18px]
+  
+          md:border-l-[25px] border-l-transparent
+          md:border-t-[40px] border-t-gray-100
+          md:border-r-[25px] border-r-transparent
+              inline-flex items-center justify-center  
+              ">
+  
+          </div>
+  
+          <img id="compass" src="/images/compass-rose.webp" height="600px" width="600px" alt="Online-kompas" title="Online-kompas" class=" img-fluid " style="transform: rotate(0deg);">
+  
+  
+  
+  
+          <p id="angle-deg" class="mt-3 font-semibold text-6xl ">360°</p>
+          <p id="angle-dir" class="font-semibold text-2xl">noorden</p>
+        </div>
+      </div>
+      <p>
+        Allereerst moet u voor de volledige werking van het digitale kompas de magnetische sensor van uw mobiele telefoon inschakelen. Op sommige mobiele telefoons is dit standaard ingeschakeld, maar sommige mobiele telefoons staan ​​niet toe dat hun browsers de magnetische sensor (magnetometer) gebruiken.
+      </p>
+      <br>
+      <p>
+        Om de magnetometer in te schakelen, kopieert u de onderstaande opdracht en plakt u deze in de zoekbalk van uw browser.
+      </p>
+      <br>
+      <div class="w-full max-w-[30rem]">
+        <div>
+          <input type="text" class="col-span-6 bg-gray-50 border border-gray-300 text-gray-500 text-xs md:text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="chrome://flags/#enable-generic-sensor-extra-classes" disabled="" readonly="">
+          <button class="my-2 end-2.5 top-1/2 -translate-y-1/2 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-gray-200 border">
+            <span id="copylinkbutton" class="inline-flex items-center">
+              <svg class="w-3 h-3 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"></path>
+              </svg>
+              <span onclick="copyTextToClipboard('chrome://flags/#enable-generic-sensor-extra-classes')" class="text-xs font-semibold">Kopiëren</span>
+            </span>
+  
+            <span id="removelinkbutton" class="hidden items-center flex">
+              <svg class="w-3 h-3 text-blue-700 dark:text-blue-500 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"></path>
+              </svg>
+              <span class="text-xs font-semibold text-blue-700 dark:text-blue-500">Copied</span>
+            </span>
+          </button>
+        </div>
+      </div>
+  
+      <div>
+        <img src="/images/magnetometer sensor enabler.webp" width="800px" height="600px" alt="magnetometersensor-enabler">
+      </div>
+      <br>
+      <p>Als u een oude versie van Chrome gebruikt (minder dan 67), gebruikt u deze opdracht om uw magnetische sensor in te schakelen om het online kompas "chrome://flags/#enable-generic-sensor" te gebruiken, kopieer de bovenstaande opdracht en verwijder "extra- klassen" en plak en voer het vervolgens uit in de Chrome-zoekbalk en schakel de magnetische sensor in.</p>
+  
+  
+      <h1 class="font-semibold py-3 text-2xl">🧭Online Kompas Live Richting | Ontvang Oost West Noord Zuid-richtingen
+      </h1>
+  
+      <p>
+        Welkom bij OnlineCompass.live, uw belangrijkste bestemming voor het moeiteloos bepalen van routebeschrijvingen, rechtstreeks vanuit uw browser. Ons geavanceerde online kompas is ontworpen om u nauwkeurig te begeleiden, of u nu door de drukke straten van de stad navigeert of de uitgestrekte wildernis verkent. We hebben het online kompas naar uw webbrowser gebracht. Nu kunt u eenvoudig navigeren en met slechts één klik een routebeschrijving bekijken. Leer hoe u de richtingen Oost, West, Noord en Zuid kunt lezen. Lees de volledige gids hoe online kompas werkt:
+      </p>
+  
+  
+      <h2 class="font-semibold py-3 text-lg">Wat is onlinekompas.live?</h2>
+      <p>
+        onlinecompass.live is een tool waarmee u online richting kunt krijgen via uw browser. U hoeft geen kompas-app te downloaden. Het is een eenvoudige, veilige tool zonder app-installaties. Het gebruikt de magnetometer van uw apparaat voor navigatie. Voor jouw kennis: het is geen traditioneel kompas met magneten. Eigenlijk werkt het met uw locatie. Eerst neemt het uw locatie en vervolgens begint het de geografische richting te tonen volgens Oost, West Noord en Zuid.
+      </p>
+      <h2 class="font-semibold py-3 text-lg">
+        Ontdek de wereld met Live Compass
+      </h2>
+      <p>
+        Ons live kompas verandert uw apparaat in een krachtig navigatiehulpmiddel, waarbij gebruik wordt gemaakt van geavanceerde technologie om realtime oriëntatie te bieden. Met een goede kalibratie kunt u eenvoudig uw huidige koers bepalen, zodat u altijd op de goede weg bent.
+  
+      </p>
+      <h2 class="font-semibold py-3 text-lg">
+        Het ultieme richtingskompas
+      </h2>
+      <p>
+        OnlineCompass.live is meer dan alleen een hulpmiddel. het is uw persoonlijke gids in het digitale tijdperk. Of u nu naar het noorden, zuiden, oosten of westen zoekt, ons richtingskompas biedt nauwkeurige en live updates. Het is perfect voor avonturiers, reizigers en iedereen die behoefte heeft aan betrouwbare richtingbepaling.
+  
+      </p>
+  
+  
+  
+  
+      <h2 class="font-semibold py-3 text-lg">Hoe de noordelijke richting te vinden?</h2>
+      <p>
+        Om het noorden te vinden met het online kompas in de browser van uw telefoon, opent u het online kompas en zorgt u ervoor dat uw apparaat plat en waterpas wordt gehouden. Zoek naar de pijl of indicator op het scherm die de richting van het noorden aangeeft. Lijn uw telefoonscherm uit met de grond en draai uw lichaam totdat de pijl recht naar voren wijst. Zodra u uitlijnt, is de bovenkant van uw telefoon naar het noorden gericht.
+      </p>
+      <h2 class="font-semibold py-3 text-lg">Kan ik Online Kompas gebruiken om richting te vinden?</h2>
+      <p>
+        Ja! Je kunt het gebruiken als navigatiehulpmiddel. <a class=" text-blue-400 font-bold  hover:underline" href="/">online kompas</a> is als een handige digitale gids op je telefoon die je laat zien welke kant het noorden, zuiden, oosten en westen is. Het maakt gebruik van een speciale sensor in uw apparaat, die zich gedraagt ​​als een moderne versie van het ouderwetse kompas. Het is cool omdat je geen fysiek kompas nodig hebt. Uw telefoon doet hetzelfde werk. Maar er is één ding dat het misschien niet altijd super exact is, vooral op plaatsen met magnetische dingen in de buurt. Bij sommige tools wordt u mogelijk gevraagd een kleine kalibratie uit te voeren om er zeker van te zijn dat de aanwijzingen juist zijn. Het is geweldig om je weg te vinden in steden, de wildernis of ergens zonder internet.
+      </p>
+      <h2 class="font-semibold py-3 text-lg">Veel Gestelde Vragen</h2>
+      <h3 class="font-semibold py-2 text-base">
+  
+        Vraag 1: Is de online kompastool op alle locaties nauwkeurig om richting te vinden?
+      </h3>
+      <p>
+        A: Ons instrument is over het algemeen nauwkeurig, maar lokale magnetische interferentie of elektronische apparaten in de buurt kunnen de metingen beïnvloeden. Voor optimale nauwkeurigheid is het raadzaam om het kompas te kalibreren en in open gebieden te gebruiken.
+      </p>
+      <h3 class="font-semibold py-2 text-base">
+        Vraag 2. Kan de online kompastool helpen de qibla-richting te vinden?
+      </h3>
+      <p>
+        EEN: Absoluut! Ons online kompas is een geweldig hulpmiddel, maar je hoeft alleen maar te weten waar de qibla is. Net als oost of west, dit kompas helpt je om de exacte qibla-locatie te bepalen.
+  
+      </p>
+      
+  
+    </main>
+  
+    <footer class=" text-center  p-4 ">
+      <div class="xl:mx-[5%] mt-4 ">
+        <div class="lg:flex justify-evenly">
+          <div class="lg:w-[40%]">
+  
+            <div class="tracking-wider">
+              <p class=" font-bold text-lg">Snelle koppelingen</p>
+              <div class="my-4"><a class=" hover:underline hover:text-white p-1 m-1 " href="/">Thuis</a>
+              </div>
+              <div class="my-4"><a class=" hover:underline hover:text-white p-1 m-1 " href="/blog/">Bloggen</a>
+              </div>
+              <div class="my-4"><a class=" hover:underline hover:text-white p-1 m-1 " href="/contact.html">Contact</a>
+              </div>
+              <div class="my-4"><a class=" hover:underline hover:text-white p-1 m-1 " href="/privacy-policy.html">Privacybeleid</a>
+              </div>
+              <div class="my-4"><a class=" hover:underline hover:text-white p-1 m-1 " href="/terms.html">Voorwaarden</a>
+              </div>
+  
+  
+  
+            </div>
+          </div>
+  
+          <div class="lg:w-[40%]">
+            <p class=" font-bold text-lg">Verbind je met ons</p>
+  
+            <div class="m-4 lg:m-8 flex justify-center">
+              <div class=" mx-4">
+  
+  
+                <a href="https://web.facebook.com/online.compass.live" aria-label="vind ons op Facebook" target="_blank" rel="noopener">
+                  <svg class="h-10 w-10 text-white hover hover:text-gray-200" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M48 24a24 24 0 1 0-27.75 23.7V30.95h-6.1V24h6.1v-5.29c0-6.01 3.58-9.34 9.07-9.34 2.62 0 5.37.47 5.37.47v5.91h-3.03c-2.98 0-3.91 1.85-3.91 3.75V24h6.66l-1.07 6.94h-5.59V47.7A24 24 0 0 0 48 24Z" fill="currentColor"></path>
+                  </svg>
+  
+                </a>
+              </div>
+              <div class="mx-4">
+  
+                <a href="https://instagram.com/wahab_hac" aria-label="Vind ons op Instagram" target="_blank" rel="noopener">
+                  <svg class="h-10 w-10 text-white hover:text-gray-200" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4.32c6.41 0 7.17.03 9.7.14 2.34.1 3.6.5 4.45.83 1.11.43 1.92.95 2.75 1.79a7.38 7.38 0 0 1 1.8 2.75c.32.85.72 2.12.82 4.46.11 2.53.14 3.29.14 9.7 0 6.4-.03 7.16-.14 9.68-.1 2.35-.5 3.61-.83 4.46a7.42 7.42 0 0 1-1.79 2.75 7.38 7.38 0 0 1-2.75 1.8c-.85.32-2.12.72-4.46.82-2.53.11-3.29.14-9.69.14-6.41 0-7.17-.03-9.7-.14-2.34-.1-3.6-.5-4.45-.83a7.42 7.42 0 0 1-2.75-1.79 7.38 7.38 0 0 1-1.8-2.75 13.2 13.2 0 0 1-.82-4.46c-.11-2.53-.14-3.29-.14-9.69 0-6.41.03-7.17.14-9.7.1-2.34.5-3.6.83-4.45A7.42 7.42 0 0 1 7.1 7.08a7.38 7.38 0 0 1 2.75-1.8 13.2 13.2 0 0 1 4.46-.82c2.52-.11 3.28-.14 9.69-.14ZM24 0c-6.52 0-7.33.03-9.9.14-2.54.11-4.3.53-5.81 1.12a11.71 11.71 0 0 0-4.26 2.77 11.76 11.76 0 0 0-2.77 4.25C.66 9.8.26 11.55.14 14.1A176.6 176.6 0 0 0 0 24c0 6.52.03 7.33.14 9.9.11 2.54.53 4.3 1.12 5.81a11.71 11.71 0 0 0 2.77 4.26 11.73 11.73 0 0 0 4.25 2.76c1.53.6 3.27 1 5.82 1.12 2.56.11 3.38.14 9.9.14 6.5 0 7.32-.03 9.88-.14 2.55-.11 4.3-.52 5.82-1.12 1.58-.6 2.92-1.43 4.25-2.76a11.73 11.73 0 0 0 2.77-4.25c.59-1.53 1-3.27 1.11-5.82.11-2.56.14-3.38.14-9.9 0-6.5-.03-7.32-.14-9.88-.11-2.55-.52-4.3-1.11-5.82-.6-1.6-1.41-2.94-2.75-4.27a11.73 11.73 0 0 0-4.25-2.76C38.2.67 36.45.27 33.9.15 31.33.03 30.52 0 24 0Z" fill="currentColor"></path>
+                    <path d="M24 11.67a12.33 12.33 0 1 0 0 24.66 12.33 12.33 0 0 0 0-24.66ZM24 32a8 8 0 1 1 0-16 8 8 0 0 1 0 16ZM39.7 11.18a2.88 2.88 0 1 1-5.76 0 2.88 2.88 0 0 1 5.75 0Z" fill="currentColor"></path>
+                  </svg>
+  
+                </a>
+  
+  
+              </div>
+            </div>
+  
+  
+          </div>
+        </div>
+        <div class="tracking-wider lg:w-[70%] lg:m-auto">
+          <p id="about" class=" font-bold text-lg">Over OnlineKompas.Live</p>
+          <div class="my-4">
+  
+            <p class="text-justify">Welkom bij onze online kompaservaring! Ontdek eenvoudig de hoofdrichtingen met ons innovatieve kompas dat niet afhankelijk is van kaarten. Wijs naar het oosten, westen, noorden of zuiden en laat ons kompas u begeleiden op uw reis. Of u nu een avonturier bent die de natuur verkent of gewoon een betrouwbaar richtingsgevoel nodig heeft, ons kaartvrije kompas is er om u te helpen uw weg te vinden. Omarm eenvoud, verken vrijelijk en laat ons kompas uw trouwe metgezel zijn terwijl u door de wereld navigeert.</p>
+          </div>
+  
+        </div>
+  
+  
+  
+  
+        <p class=" py-2 ">Copyright © 2024, alle rechten voorbehouden.</p>
+        <div class="font-bold text-xl mt-2 ">
+  
+          <div class="flex justify-center font-light ">
+  
+            <p>onlinekompas.live</p>
+  
+          </div>
+  
+        </div>
+        <hr class="mx-4 my-2 bg-white">
+  
+  
+  
+      </div>
+      <div class="flex justify-evenly mx-4 text-lg">
+  
+  
+        <div>
+          <p>Ontworpen en ontwikkeld door <a class="text-blue-300" target="_blank" href="https://www.instagram.com/xanassyedx">Syed Anas</a> , <a class="text-blue-300" target="_blank" href="https://www.instagram.com/shazictics/">Shahzaib</a> en <a class="text-blue-300" target="_blank" href="https://instagram.com/wahab_hac">Abdul Wahab</a></p>
+  
+        </div>
+  
+      </div>
+  
+    </footer>
+  
+ 
+  <script src="/js/compass.js"></script>
+  
+     
+  </body>
+  </html>
